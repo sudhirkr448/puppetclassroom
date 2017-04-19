@@ -48,8 +48,15 @@ $package_name = $facts['os']['family']?{
     'Debian' => 'apache2',
 }
 package { $package_name:
-    ensure => purged,
+    ensure => installed,
     
+}
+    service { $package_name:
+       ensure     => running,
+       enable     => true,
+#       hasrestart => true,
+#       hasstatus  => true,
+       # pattern    => 'name',
 }
 
 
