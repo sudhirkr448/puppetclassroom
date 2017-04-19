@@ -1,0 +1,15 @@
+{
+  "name": "cts-apache1",
+  "version": "0.1.0",
+  "author": "me",
+  "summary": "undretansind module structure",
+  "license": "Apache-2.0",
+  "source": "https://github.com/asquarezone/puppetzone.git",
+  "project_page": "https://github.com/asquarezone/puppetzone",
+  "issues_url": "https://github.com/asquarezone/puppetzone/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
