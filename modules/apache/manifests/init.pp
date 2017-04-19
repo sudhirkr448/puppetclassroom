@@ -43,21 +43,8 @@
 # Copyright 2017 Your name here, unless otherwise noted.
 #
 class apache {
-$package_name = $facts['os']['family']?{
-    'RadHat' => 'httpd',
-    'Debian' => 'apache2',
-}
-package { $package_name:
-    ensure => installed,
-    
-}
-    service { $package_name:
-       ensure     => running,
-       enable     => true,
-#       hasrestart => true,
-#       hasstatus  => true,
-       # pattern    => 'name',
-}
-
-
+include::install
+notify {"installed the apache server":}
+include:: uninstall
+notify {"uninstalled the apache server":}
 }
