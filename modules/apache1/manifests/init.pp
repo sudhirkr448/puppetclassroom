@@ -43,13 +43,14 @@
 # Copyright 2017 Your name here, unless otherwise noted.
 #
 class apache1 {
-$pack_name = $facts['os']['family']{
-    'RedHat' = 'httpd',
-    'Debian' = 'apache2',
-}
-package { $pack_name:
-    ensure => purge,
-    
+include apache1::install
+notify { 'the software installed': } 
+
+include apache1::service
+notify { 'apache is running': } 
+
+include apache1::uninstall
+notify { 'apache is uninstalled': } 
 }
 
 #service { $pack_name:
