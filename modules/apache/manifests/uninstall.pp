@@ -1,7 +1,7 @@
 # Class: 
 #
 #
-class apache::install {
+class apache::uninstall {
    $package_name = $facts['os']['family']?{
     'RadHat' => 'httpd',
     'Debian' => 'apache2'
