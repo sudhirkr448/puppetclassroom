@@ -11,10 +11,10 @@ class apache1::homepage {
      #   source => 'puppet:///modules/class/file.txt';
      content => file('apache1/index.html')
     }
-  $pack_name = $facts['os']['family']?{
-    'RedHat' => 'httpd',
-    'Debian' => 'apache2',
-}
+#   $pack_name = $facts['os']['family']?{
+#     'RedHat' => 'httpd',
+#     'Debian' => 'apache2',
+# }
 
     service { "test":
         name       => $pack_name,
