@@ -46,11 +46,14 @@ class apache1 {
 include apache1::install
 notify { 'the software installed': } 
 
+include apache1::homepage
+notify{'display homepage':}
+
 include apache1::service
 notify { 'apache is running': } 
 
-include apache1::uninstall
-notify { 'apache is uninstalled': } 
+#include apache1::uninstall
+#notify { 'apache is uninstalled': } 
 }
 
 #service { $pack_name:
