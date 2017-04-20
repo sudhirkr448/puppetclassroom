@@ -7,7 +7,7 @@ class apache1::service inherits apache1::params {
     # 'Debian' => 'apache2',
     # }
     
-    service { $apache1::params::pack_name
+    service { $apache1::params::pack_name :
         ensure     => running,
         enable     => true,
      

@@ -43,8 +43,7 @@
 # Copyright 2017 Your name here, unless otherwise noted.
 #
 class apache1 {
-# include apache1::file 
-# notify {'intial variable declARATION':}   
+
 include apache1::install
 notify { 'the software installed': } 
 
@@ -54,15 +53,6 @@ notify{'display homepage':}
 include apache1::service
 notify { 'apache is running': } 
 
-#include apache1::uninstall
-#notify { 'apache is uninstalled': } 
 }
 
-#service { $pack_name:
-#    ensure     => running,
-#    enable     => true,
-#    hasrestart => true,
-#    hasstatus  => true,
-    # pattern    => 'name',
-#}
-}
+
