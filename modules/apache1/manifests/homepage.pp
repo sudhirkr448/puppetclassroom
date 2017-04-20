@@ -1,7 +1,7 @@
 # Class: apache1::homepage
 #
 #
-class apache1::homepage {
+class apache1::homepage inherits apache1::params {
     # resources
     file { '/var/www/index.html':
         ensure => file,
@@ -16,8 +16,8 @@ class apache1::homepage {
 #     'Debian' => 'apache2',
 # }
 
-    service { "test":
-        name       => $pack_name,
+    service { $apache1::params::pack_name:
+       # name       => ,
         ensure     => running,
         enable     => true,
         hasrestart => true,

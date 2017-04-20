@@ -43,6 +43,8 @@
 # Copyright 2017 Your name here, unless otherwise noted.
 #
 class apache1 {
+# include apache1::file 
+# notify {'intial variable declARATION':}   
 include apache1::install
 notify { 'the software installed': } 
 
